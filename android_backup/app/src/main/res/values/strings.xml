@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">rk-confeitaria</string>
+    <string name="title_activity_main">rk-confeitaria</string>
+    <string name="package_name">com.doceria.rkconfeitaria</string>
+    <string name="custom_url_scheme">com.doceria.rkconfeitaria</string>
+</resources>

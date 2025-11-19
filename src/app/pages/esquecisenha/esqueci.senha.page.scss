@@ -1,0 +1,170 @@
+/* ===== Fundo geral: tela inteira VERDE ===== */
+ion-content,
+ion-content.background {
+  --background: #cfe8cf; /* mesmo verde do login/cadastro */
+}
+
+/* Container centraliza o conteúdo, sem fundo próprio */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 20px;
+  box-sizing: border-box;
+  animation: fadeInBackground 1.2s ease-in-out;
+}
+
+/* "Card" vira apenas wrapper invisível */
+.login-card {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  animation: slideUp 0.8s ease-out;
+  box-sizing: border-box;
+}
+
+/* ===== Logo e título ===== */
+.logo {
+  font-size: 48px;
+  font-weight: 700;
+  color: #355d3b;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #355d3b;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* ===== Campo de e-mail ===== */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f9fdf9;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #b5d2b5;
+  transition: 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: #3f6f45;
+  box-shadow: 0 0 6px #3f6f4533;
+}
+
+.input-group ion-icon {
+  font-size: 20px;
+  color: #3f6f45;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 14px;
+  color: #2e4d31;
+}
+
+/* ===== Botão principal ===== */
+.btn-primary {
+  display: block;
+  width: 100%;
+  background: #3f6f45;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #355d3b;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* ===== Link de voltar ===== */
+.forgot-password {
+  display: block;
+  margin-top: 16px;
+  color: #355d3b;
+  font-size: 13px;
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* ===== Toast customizado ===== */
+.custom-toast {
+  --border-radius: 12px;
+  --background: #3f6f45;
+  --color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ===== Animações ===== */
+@keyframes fadeInBackground {
+  from { background-color: #e2f0e0; }
+  to { background-color: #f3f8f2; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: slideUp 1s ease-out;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 480px) {
+  .login-container {
+    height: 100vh;
+    padding: 15px;
+  }
+
+  .login-card {
+    max-width: 100%;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

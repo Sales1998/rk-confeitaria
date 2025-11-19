@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+=======
+﻿{
+>>>>>>> 8efa6a1 (Primeiro commit - Ajustei o cadastro.page.ts pra enviar nome e telefone ao AuthService, e no auth.service.ts tratei undefined com '' pra evitar o erro invalid-argument no Firestore.)
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+<<<<<<< HEAD
+      "jasmine"
+    ]
+  },
+  "files": [
+    "src/test.ts",
+    "src/polyfills.ts"
+=======
+      "jasmine",
+      "node"
+    ]
+  },
+  "files": [
+    "src/test.ts"
+>>>>>>> 8efa6a1 (Primeiro commit - Ajustei o cadastro.page.ts pra enviar nome e telefone ao AuthService, e no auth.service.ts tratei undefined com '' pra evitar o erro invalid-argument no Firestore.)
+  ],
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
+}

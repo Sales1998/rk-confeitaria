@@ -1,0 +1,102 @@
+<ion-content class="background">
+
+  <!-- 👤 Cabeçalho -->
+  <div class="profile-header fade-in">
+    <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+    <h2>Meu Perfil</h2>
+    <p class="user-email">{{ emailUsuario }}</p>
+  </div>
+
+  <!-- 📋 Informações pessoais -->
+  <div class="info-card fade-in">
+    <h3>Informações Pessoais</h3>
+
+    <div *ngIf="!editando; else modoEdicao">
+      <div class="info-item">
+        <ion-icon name="person-outline"></ion-icon>
+        <span>{{ nomeUsuario || 'Usuário' }}</span>
+      </div>
+      <div class="info-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>{{ emailUsuario }}</span>
+      </div>
+      <div class="info-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>{{ telefoneUsuario || '(00) 00000-0000' }}</span>
+      </div>
+
+      <button class="btn-editar" (click)="habilitarEdicao()">Editar Perfil</button>
+    </div>
+
+    <ng-template #modoEdicao>
+      <div class="info-item">
+        <ion-icon name="person-outline"></ion-icon>
+        <input type="text" [(ngModel)]="nomeUsuario" placeholder="Nome completo" />
+      </div>
+      <div class="info-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <input type="tel" [(ngModel)]="telefoneUsuario" placeholder="(00) 00000-0000" />
+      </div>
+
+      <button class="btn-editar" (click)="salvarAlteracoes()">Salvar</button>
+    </ng-template>
+  </div>
+
+  <!-- 🧾 Histórico de pedidos -->
+  <div class="info-card fade-in">
+    <h3>Histórico de Pedidos</h3>
+    <div *ngIf="pedidos.length > 0; else semPedidos">
+      <div class="pedido-item" *ngFor="let pedido of pedidos">
+        <p><strong>Pedido nº:</strong> {{ pedido.numero }}</p>
+        <p><strong>Total:</strong> R$ {{ pedido.total | number: '1.2-2' }}</p>
+        <p><strong>Data:</strong> {{ pedido.data | date:'dd/MM/yyyy HH:mm' }}</p>
+      </div>
+    </div>
+    <ng-template #semPedidos>
+      <p class="sem-pedidos">Você ainda não fez pedidos 😋</p>
+    </ng-template>
+  </div>
+
+  <!-- ⚙️ Opções -->
+  <div class="info-card fade-in">
+    <h3>Configurações</h3>
+    <button class="btn-opcao" (click)="alterarSenha()">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      Alterar Senha
+    </button>
+    <button class="btn-opcao sair" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Sair da Conta
+    </button>
+  </div>
+
+  <!-- 🍰 Sobre -->
+  <div class="sobre fade-in">
+    <h4>🍰 Sobre a RK Confeitaria</h4>
+    <p>
+      Feita com amor e ingredientes selecionados 💚  
+      A RK Confeitaria traz o sabor artesanal em cada doce.
+    </p>
+  </div>
+
+</ion-content>
+
+<!-- 🔽 Barra inferior com navegação funcional -->
+<ion-footer class="footer-nav">
+  <div class="nav-buttons">
+    <button class="nav-btn" (click)="navegar('/menu')">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <span>Menu</span>
+    </button>
+
+    <button class="nav-btn" (click)="navegar('/carrinho')">
+      <ion-icon name="cart-outline"></ion-icon>
+      <span>Carrinho</span>
+    </button>
+
+    <button class="nav-btn active" (click)="navegar('/perfil')">
+      <ion-icon name="person-outline"></ion-icon>
+      <span>Perfil</span>
+    </button>
+  </div>
+</ion-footer>

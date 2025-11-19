@@ -1,0 +1,87 @@
+<ion-content class="background">
+  <!-- ✅ Header com saudação e botão de sair -->
+  <div class="menu-header">
+    <div class="user-info">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <div>
+        <p class="welcome-text">Bem-vindo(a)</p>
+        <span class="user-email">{{ emailUsuario }}</span>
+      </div>
+    </div>
+
+    <ion-button fill="clear" class="logout-btn" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- ✅ Seção principal -->
+  <div class="menu-container fade-in">
+    <h2 class="menu-title">🍰 Nossos Doces</h2>
+
+    <!-- ✅ Barra de busca -->
+    <div class="search-bar">
+      <ion-icon name="search-outline"></ion-icon>
+      <input
+        type="text"
+        placeholder="Buscar doces..."
+        [(ngModel)]="searchTerm"
+        (input)="filtrarProdutos()"
+      />
+    </div>
+
+    <!-- ✅ Grade de produtos -->
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let produto of produtosFiltrados">
+        <div class="image-container">
+          <img
+            [src]="produto.imagem"
+            alt="{{ produto.nome }}"
+            class="product-image"
+          />
+        </div>
+
+        <div class="product-info">
+          <p class="product-name">{{ produto.nome }}</p>
+          <p class="product-price">R$ {{ produto.preco | number: '1.2-2' }}</p>
+
+          <button class="btn-add" (click)="addToCart(produto)">
+            <ion-icon name="add-outline"></ion-icon>
+            <span>Adicionar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<!-- ✅ Barra de Navegação Inferior -->
+<ion-footer class="footer-nav">
+  <div class="nav-buttons">
+    <button
+      class="nav-btn"
+      [class.active]="rotaAtiva === '/menu'"
+      (click)="navegar('/menu')"
+    >
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <span>Menu</span>
+    </button>
+
+    <button
+      class="nav-btn"
+      [class.active]="rotaAtiva === '/carrinho'"
+      (click)="navegar('/carrinho')"
+    >
+      <ion-icon name="cart-outline"></ion-icon>
+      <span>Carrinho</span>
+    </button>
+
+    <button
+      class="nav-btn"
+      [class.active]="rotaAtiva === '/perfil'"
+      (click)="navegar('/perfil')"
+    >
+      <ion-icon name="person-outline"></ion-icon>
+      <span>Perfil</span>
+    </button>
+  </div>
+</ion-footer>

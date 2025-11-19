@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "444195340173",
+    "project_id": "rk-confeitaria-cc2c5",
+    "storage_bucket": "rk-confeitaria-cc2c5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444195340173:android:56c3ac27795e0ecbdd47c4",
+        "android_client_info": {
+          "package_name": "com.doceria.rkconfeitaria"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO1LahGzZzS_FbaXKfD1WPTXDVvv81rJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

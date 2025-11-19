@@ -1,0 +1,547 @@
+.background {
+  --background: #e6efe4;
+  font-family: "Poppins", sans-serif;
+}
+
+.fade-in {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cart-header {
+  background: #98c29a;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 0 0 18px 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cart-container {
+  padding: 18px;
+}
+
+.cart-item {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(53, 93, 59, 0.12);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.cart-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+
+.cart-info h3 {
+  font-size: 1rem;
+  color: #355d3b;
+  margin: 0;
+}
+
+.cart-info p {
+  color: #4b7054;
+  font-size: 0.9rem;
+  margin: 4px 0 0;
+}
+
+.remove-btn {
+  color: #c0392b;
+  font-size: 1.4rem;
+  margin-left: auto;
+}
+
+.total {
+  text-align: right;
+  font-size: 1.1rem;
+  color: #355d3b;
+  font-weight: 600;
+  margin: 10px 5px 20px;
+}
+
+.payment-options {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(53, 93, 59, 0.12);
+  padding: 12px 14px;
+  margin-bottom: 20px;
+}
+
+.payment-options h4 {
+  color: #355d3b;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.finalizar-btn {
+  background: #4b7054;
+  color: #fff;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.25s;
+}
+
+.finalizar-btn:hover {
+  background: #355d3b;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #355d3b;
+  margin-top: 60px;
+}
+
+.empty-cart ion-icon {
+  font-size: 3rem;
+  color: #6fa277;
+}
+
+.btn-voltar {
+  margin-top: 10px;
+  background: #98c29a;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.footer-nav {
+  background: #ffffff;
+  border-top: 2px solid #cadbc8;
+  height: 60px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #6d8f71;
+  text-align: center;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  color: #355d3b;
+  transform: scale(1.08);
+}
+
+.nav-btn ion-icon {
+  font-size: 20px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(53, 93, 59, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 18px;
+  text-align: center;
+  padding: 24px;
+  width: 85%;
+  box-shadow: 0 5px 15px rgba(53, 93, 59, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-sucesso {
+  color: #4b7054;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.modal-content h3 {
+  color: #355d3b;
+  margin-bottom: 6px;
+  font-size: 1.4rem;
+}
+
+.modal-content p {
+  color: #4b7054;
+  font-size: 0.95rem;
+  margin: 5px 0;
+}
+
+.agradecimento {
+  font-weight: 600;
+  color: #355d3b;
+  margin-top: 10px;
+}
+
+.btn-voltar-menu {
+  margin-top: 16px;
+  background: #98c29a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.btn-voltar-menu:hover {
+  background: #6fa277;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 2px;
+  animation: confetti-fall 3s linear forwards;
+  z-index: 20;
+}
+
+.confetti:nth-child(1) { background: #98c29a; left: 10%; animation-delay: 0s; }
+.confetti:nth-child(2) { background: #ffd166; left: 25%; animation-delay: 0.2s; }
+.confetti:nth-child(3) { background: #ef476f; left: 40%; animation-delay: 0.4s; }
+.confetti:nth-child(4) { background: #4b7054; left: 55%; animation-delay: 0.1s; }
+.confetti:nth-child(5) { background: #83c5be; left: 70%; animation-delay: 0.3s; }
+.confetti:nth-child(6) { background: #f6bd60; left: 85%; animation-delay: 0.5s; }
+
+.card-form {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #cadbc8;
+}
+
+.card-form h5 {
+  font-size: 0.95rem;
+  color: #355d3b;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.card-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.card-field-row {
+  display: flex;
+  gap: 8px;
+}
+
+.card-field-row .card-field {
+  flex: 1;
+}
+
+.card-field label {
+  font-size: 0.78rem;
+  color: #4b7054;
+  margin-bottom: 4px;
+}
+
+.card-field input {
+  border: 1px solid #cadbc8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  outline: none;
+  background: #f5f7f4;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-field input:focus {
+  border-color: #98c29a;
+  box-shadow: 0 0 0 1px rgba(152, 194, 154, 0.5);
+}
+
+.card-hint {
+  font-size: 0.75rem;
+  color: #6d8f71;
+  margin-top: 4px;
+}
+
+/* ✅ CONTROLES DE QUANTIDADE (NOVO) */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: #98c29a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(53, 93, 59, 0.25);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.qty-btn:hover {
+  background: #6fa277;
+}
+
+.qty-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 2px rgba(53, 93, 59, 0.3);
+}
+
+.qty-value {
+  min-width: 26px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #355d3b;
+}
+
+/* 🔑 PIX e TROCO */
+.pix-info,
+.troco-info {
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(53, 93, 59, 0.08);
+}
+
+.pix-label,
+.troco-label {
+  color: #355d3b;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.copiar-btn {
+  background: #4b7054;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.copiar-btn:hover {
+  background: #355d3b;
+}
+
+.troco-input {
+  width: 100%;
+  border: 1px solid #cadbc8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  background: #f5f7f4;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.troco-input:focus {
+  border-color: #98c29a;
+  box-shadow: 0 0 0 1px rgba(152, 194, 154, 0.5);
+}
+/* ✅ CONTROLES DE QUANTIDADE (já existia) */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: #98c29a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(53, 93, 59, 0.25);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.qty-btn:hover {
+  background: #6fa277;
+}
+
+.qty-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 2px rgba(53, 93, 59, 0.3);
+}
+
+.qty-value {
+  min-width: 26px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #355d3b;
+}
+
+/* 🔑 PIX e TROCO (já existia na versão anterior) */
+.pix-info,
+.troco-info {
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(53, 93, 59, 0.08);
+}
+
+.pix-label,
+.troco-label {
+  color: #355d3b;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.copiar-btn {
+  background: #4b7054;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.copiar-btn:hover {
+  background: #355d3b;
+}
+
+.troco-input {
+  width: 100%;
+  border: 1px solid #cadbc8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  background: #f5f7f4;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.troco-input:focus {
+  border-color: #98c29a;
+  box-shadow: 0 0 0 1px rgba(152, 194, 154, 0.5);
+}
+
+/* 🏠 ENDEREÇO DE ENTREGA (NOVO) */
+.address-box {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(53, 93, 59, 0.12);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.address-box h4 {
+  color: #355d3b;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.address-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.address-field label {
+  font-size: 0.78rem;
+  color: #4b7054;
+  margin-bottom: 4px;
+}
+
+.address-field input {
+  border: 1px solid #cadbc8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  outline: none;
+  background: #f5f7f4;
+  font-family: "Poppins", sans-serif;
+}
+
+.address-field input:focus {
+  border-color: #98c29a;
+  box-shadow: 0 0 0 1px rgba(152, 194, 154, 0.5);
+}
+
+.address-row {
+  display: flex;
+  gap: 8px;
+}
+
+.address-row .address-field {
+ 
+  flex: 1;
+}
+    

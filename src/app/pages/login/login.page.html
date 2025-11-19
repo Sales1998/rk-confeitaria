@@ -1,0 +1,61 @@
+<ion-content class="background fade-in">
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="logo">RK</h1>
+      <p class="subtitle">CONFEITARIA</p>
+
+      <div>
+        <div class="input-group">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input
+            type="email"
+            placeholder="E-mail"
+            [(ngModel)]="email"
+            name="email"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input
+            [type]="mostrarSenha ? 'text' : 'password'"
+            placeholder="Senha"
+            [(ngModel)]="senha"
+            name="senha"
+            required
+          />
+          <ion-icon
+            class="eye-icon"
+            [name]="mostrarSenha ? 'eye-off-outline' : 'eye-outline'"
+            (click)="mostrarSenha = !mostrarSenha">
+          </ion-icon>
+        </div>
+
+        <ion-button
+          expand="block"
+          class="btn-primary"
+          shape="round"
+          type="button"
+          (click)="login()">
+          ENTRAR
+        </ion-button>
+
+        <button
+          type="button"
+          class="forgot-password"
+          routerLink="/esquecisenha">
+          Esqueci minha senha
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="btn-secondary"
+        routerLink="/cadastro">
+        CRIAR CONTA
+      </button>
+    </div>
+  </div>
+</ion-content>

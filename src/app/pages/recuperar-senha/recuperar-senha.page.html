@@ -1,0 +1,60 @@
+<ion-content class="background fade-in">
+
+  <div class="login-container">
+    <div class="login-card">
+
+      <h1 class="logo">RK</h1>
+      <p class="subtitle">NOVA SENHA</p>
+
+      <form (ngSubmit)="alterarSenha()">
+
+        <!-- Nova Senha -->
+        <div class="input-group">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input 
+            [type]="mostrarSenha ? 'text' : 'password'"
+            [(ngModel)]="novaSenha"
+            name="novaSenha"
+            placeholder="Nova senha"
+            required />
+
+          <ion-icon class="eye-icon"
+                    [name]="mostrarSenha ? 'eye-off-outline' : 'eye-outline'"
+                    (click)="mostrarSenha = !mostrarSenha">
+          </ion-icon>
+        </div>
+
+        <!-- Indicador de força da senha -->
+        <p class="senha-status" 
+           [class.ok]="senhaForte" 
+           [class.bad]="!senhaForte && novaSenha">
+          {{ senhaForte ? 'Senha forte ✅' : novaSenha ? 'Senha fraca ❌' : '' }}
+        </p>
+
+        <!-- Confirmar Senha -->
+        <div class="input-group">
+          <ion-icon name="checkmark-done-outline"></ion-icon>
+          <input 
+            [type]="mostrarConfirmarSenha ? 'text' : 'password'"
+            [(ngModel)]="confirmarSenha"
+            name="confirmarSenha"
+            placeholder="Confirmar senha"
+            required />
+
+          <ion-icon class="eye-icon"
+                    [name]="mostrarConfirmarSenha ? 'eye-off-outline' : 'eye-outline'"
+                    (click)="mostrarConfirmarSenha = !mostrarConfirmarSenha">
+          </ion-icon>
+        </div>
+
+        <button class="btn-primary" type="submit">
+          ALTERAR SENHA
+        </button>
+
+        <a (click)="goToLogin()" class="forgot-password">Voltar ao login</a>
+      </form>
+
+    </div>
+  </div>
+
+</ion-content>

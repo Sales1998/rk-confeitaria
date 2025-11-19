@@ -1,0 +1,204 @@
+/* ===== Fundo geral: tela inteira VERDE ===== */
+ion-content.background {
+  --background: #cfe8cf; /* mesmo verde do card antigo */
+}
+
+/* Container agora só centraliza o conteúdo, sem fundo próprio */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: transparent;  /* tira fundo branco */
+  font-family: 'Roboto', sans-serif;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* "Card" vira só um wrapper invisível (sem borda, sem sombra) */
+.login-card {
+  background: transparent;      /* some o card verde separado */
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  animation: slideUp 0.8s ease-out;
+  box-sizing: border-box;
+}
+
+/* ===== Logo e título ===== */
+.logo {
+  font-size: 48px;
+  font-weight: 700;
+  color: #355d3b;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #355d3b;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* ===== Inputs ===== */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f9fdf9;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #b5d2b5;
+  transition: 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: #3f6f45;
+  box-shadow: 0 0 6px #3f6f4533;
+}
+
+.input-group ion-icon {
+  font-size: 20px;
+  color: #3f6f45;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 14px;
+  color: #2e4d31;
+  padding-right: 0;
+}
+
+/* ===== Ícone do olho ===== */
+.eye-icon {
+  margin-left: 8px;
+  font-size: 20px;
+  color: #3f6f45;
+  cursor: pointer;
+}
+
+/* 🔥 Remove o olho preto nativo do Edge e Chrome */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input::-webkit-password-toggle {
+  display: none;
+}
+
+/* ===== Botões ===== */
+.btn-primary,
+.btn-secondary {
+  width: 100%;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+/* Host do ion-button: sem fundo, sem 2ª borda */
+.btn-primary {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+/* Estilo REAL do ion-button (1 camada só, verde RK) */
+ion-button.btn-primary {
+  --background: #3f6f45;
+  --background-hover: #355d3b;
+  --background-activated: #355d3b;
+  --border-radius: 999px;
+  --box-shadow: none;
+
+  width: 100%;
+  height: 44px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Botão secundário (Criar conta) */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #3f6f45;
+  color: #3f6f45;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.btn-secondary:hover {
+  background: #3f6f45;
+  color: white;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* ===== Link "Esqueci minha senha" ===== */
+.forgot-password {
+  text-align: center;
+  margin: 12px 0 18px 0;
+  font-size: 13px;
+  color: #355d3b;
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+}
+
+.forgot-password:focus,
+.forgot-password:active {
+  outline: none;
+  background: transparent;
+}
+
+/* ===== Animações ===== */
+@keyframes fadeInBackground {
+  from { background-color: #e2f0e0; }
+  to { background-color: #f3f8f2; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 15px;
+    height: 100vh;
+  }
+
+  .logo { font-size: 36px; }
+
+  .subtitle {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 14px;
+  }
+}
+
+/* ===== Toast customizado ===== */
+.custom-toast {
+  --border-radius: 12px;
+  --background: #3f6f45;
+  --color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+}

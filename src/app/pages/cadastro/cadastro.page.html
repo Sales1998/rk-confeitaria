@@ -1,0 +1,92 @@
+<ion-content class="background fade-in">
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="logo">RK</h1>
+      <p class="subtitle">CONFEITARIA</p>
+
+      <div>
+        <div class="input-group">
+          <ion-icon name="person-outline"></ion-icon>
+          <input
+            type="text"
+            placeholder="Nome completo"
+            [(ngModel)]="nome"
+            name="nome"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input
+            type="email"
+            placeholder="E-mail"
+            [(ngModel)]="email"
+            name="email"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <ion-icon name="call-outline"></ion-icon>
+          <input
+            type="tel"
+            placeholder="Telefone"
+            [(ngModel)]="telefone"
+            name="telefone"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input
+            [type]="mostrarSenha ? 'text' : 'password'"
+            placeholder="Senha"
+            [(ngModel)]="senha"
+            name="senha"
+            required
+          />
+          <ion-icon
+            class="eye-icon"
+            [name]="mostrarSenha ? 'eye-off-outline' : 'eye-outline'"
+            (click)="mostrarSenha = !mostrarSenha">
+          </ion-icon>
+        </div>
+
+        <div class="input-group">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input
+            [type]="mostrarConfirmar ? 'text' : 'password'"
+            placeholder="Confirmar senha"
+            [(ngModel)]="confirmarSenha"
+            name="confirmarSenha"
+            required
+          />
+          <ion-icon
+            class="eye-icon"
+            [name]="mostrarConfirmar ? 'eye-off-outline' : 'eye-outline'"
+            (click)="mostrarConfirmar = !mostrarConfirmar">
+          </ion-icon>
+        </div>
+
+        <ion-button
+          expand="block"
+          class="btn-primary"
+          shape="round"
+          type="button"
+          (click)="cadastrar()">
+          CADASTRAR
+        </ion-button>
+
+        <button
+          type="button"
+          class="forgot-password"
+          (click)="goToLogin()">
+          Já tenho uma conta
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>
